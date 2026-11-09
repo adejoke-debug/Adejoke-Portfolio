@@ -1,5 +1,31 @@
 // Shared interactions for the portfolio website.
 document.addEventListener("DOMContentLoaded", () => {
+  // Scroll reveal: sections and cards animate into view as the page is explored.
+  const revealTargets = document.querySelectorAll(
+    ".section-pad, .section-heading, .project-card, .quote-section, .audio-band, .closing-cta, " +
+    ".about-profile, .detail-card, .skills-section, .education-table, .case-study, " +
+    ".planner-top, .task-panel, .planner-aside, .contact-aside, .contact-form"
+  );
+  revealTargets.forEach((el, index) => {
+    el.setAttribute("data-reveal", "");
+    if (el.classList.contains("project-card") || el.classList.contains("detail-card")) {
+      el.style.setProperty("--reveal-delay", `${(index % 3) * 110}ms`);
+    }
+  });
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("motion-ready");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -45px 0px" });
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add("is-visible"));
+  }
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
   const menuButton = document.querySelector(".menu-toggle");
