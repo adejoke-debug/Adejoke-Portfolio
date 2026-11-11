@@ -1,6 +1,5 @@
-// Shared interactions for the portfolio website.
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll reveal: sections and cards animate into view as the page is explored.
+  
   const revealTargets = document.querySelectorAll(
     ".section-pad, .section-heading, .project-card, .quote-section, .audio-band, .closing-cta, " +
     ".about-profile, .detail-card, .skills-section, .education-table, .case-study, " +
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Academic planner: array state + DOM rendering + localStorage persistence.
   const taskForm = document.querySelector("#task-form");
   if (taskForm) {
     const STORAGE_KEY = "eunicePortfolioTasks";
@@ -101,8 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
     render();
   }
-
-  // Contact form validation: required fields, email format and digits-only phone.
+  
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", event => {
@@ -137,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       feedback.className = "form-feedback success";
       const subject = encodeURIComponent(`Portfolio message from ${fields.name.value.trim()}`);
       const body = encodeURIComponent(`Name: ${fields.name.value.trim()}\nEmail: ${fields.email.value.trim()}\nPhone: ${fields.phone.value.trim()}\n\nMessage:\n${fields.message.value.trim()}`);
-      // Replace this placeholder with the student's real email address before publishing.
+      
       window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
     });
     contactForm.querySelectorAll("input, textarea").forEach(input => input.addEventListener("input", () => {
