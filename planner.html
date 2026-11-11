@@ -1,12 +1,205 @@
+```html
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Academic Planner — Eunice Adegbesan</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script></head>
-<body><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">E.</span><span>eunice adegbesan<small>STUDENT PORTFOLIO</small></span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="main-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a class="active" href="planner.html">Planner</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Let's connect <span>↗</span></a></nav></header>
-<main><section class="page-hero wrap planner-hero"><div class="section-kicker">YOUR SPACE TO STAY ON TRACK / 03</div><h1>Make space for<br><em>what matters.</em></h1><p class="hero-lede">A simple academic planner for tasks, deadlines and little wins. Your tasks are saved in this browser.</p></section>
-<section class="planner-wrap wrap"><div class="planner-top"><div><p class="eyebrow">YOUR ACADEMIC DASHBOARD</p><h2 id="planner-date">A fresh start.</h2><p class="muted">One thing at a time. You've got this.</p></div><div class="progress-card"><span>COMPLETION RATE</span><strong id="progress-number">0%</strong><div class="progress-track"><i id="progress-fill"></i></div><small id="progress-caption">0 of 0 tasks completed</small></div></div>
-<div class="planner-layout"><section class="task-panel"><div class="panel-heading"><div><div class="section-kicker">TASK MANAGER</div><h3>Your to-do list</h3></div><span class="task-count" id="task-count">0 TASKS</span></div>
-<form id="task-form" class="task-form"><label class="sr-only" for="task-title">Task title</label><input id="task-title" name="title" type="text" placeholder="What needs to get done?" maxlength="100" required><label class="sr-only" for="task-date">Due date</label><input id="task-date" name="date" type="date"><label class="sr-only" for="task-priority">Priority</label><select id="task-priority" name="priority"><option value="Normal">Normal</option><option value="Important">Important</option><option value="Urgent">Urgent</option></select><button class="button button-burgundy add-task" type="submit">Add task <span>＋</span></button></form>
-<div class="task-filters" role="group" aria-label="Filter tasks"><button class="filter-btn selected" data-filter="all" type="button">All</button><button class="filter-btn" data-filter="active" type="button">To do</button><button class="filter-btn" data-filter="completed" type="button">Completed</button></div>
-<ul class="task-list" id="task-list" aria-live="polite"><li class="empty-state">Your list is clear. Add your first task above ✳</li></ul></section>
-<aside class="planner-aside"><div class="aside-flower">✳</div><p class="eyebrow">A GENTLE REMINDER</p><h3>Progress is still progress, even when it's <em>small.</em></h3><p>Break big assignments into smaller steps. Give yourself time to focus, and remember to rest.</p><div class="aside-line"></div><b>Little by little.</b><span>— Your future self</span></aside></div>
-<p class="planner-note">Your planner uses your browser's local storage. Tasks stay on this device and are not synced to an online account.</p></section></main>
-<footer class="site-footer"><div class="wrap footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E.</span><span>eunice adegbesan<small>STUDENT PORTFOLIO</small></span></a><p>Designed with intention. Built while learning.</p><span>© <span data-year></span> Eunice Adegbesan</span></div></footer></body></html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Academic Planner — Eunice Adegbesan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">E.</span>
+            <span>
+                eunice adegbesan
+                <small>STUDENT PORTFOLIO</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a class="active" href="planner.html">Planner</a>
+            <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">
+                Let's connect <span>↗</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero wrap planner-hero">
+            <div class="section-kicker">
+                YOUR SPACE TO STAY ON TRACK / 03
+            </div>
+
+            <h1>
+                Make space for<br>
+                <em>what matters.</em>
+            </h1>
+
+            <p class="hero-lede">
+                A simple academic planner for tasks, deadlines and little wins. Your tasks are saved in this browser.
+            </p>
+        </section>
+
+        <section class="planner-wrap wrap">
+            <div class="planner-top">
+                <div>
+                    <p class="eyebrow">YOUR ACADEMIC DASHBOARD</p>
+
+                    <h2 id="planner-date">A fresh start.</h2>
+
+                    <p class="muted">
+                        One thing at a time. You've got this.
+                    </p>
+                </div>
+
+                <div class="progress-card">
+                    <span>COMPLETION RATE</span>
+
+                    <strong id="progress-number">0%</strong>
+
+                    <div class="progress-track">
+                        <i id="progress-fill"></i>
+                    </div>
+
+                    <small id="progress-caption">
+                        0 of 0 tasks completed
+                    </small>
+                </div>
+            </div>
+
+            <div class="planner-layout">
+                <section class="task-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <div class="section-kicker">TASK MANAGER</div>
+                            <h3>Your to-do list</h3>
+                        </div>
+
+                        <span class="task-count" id="task-count">
+                            0 TASKS
+                        </span>
+                    </div>
+
+                    <form id="task-form" class="task-form">
+                        <label class="sr-only" for="task-title">
+                            Task title
+                        </label>
+
+                        <input
+                            id="task-title"
+                            name="title"
+                            type="text"
+                            placeholder="What needs to get done?"
+                            maxlength="100"
+                            required
+                        >
+
+                        <label class="sr-only" for="task-date">
+                            Due date
+                        </label>
+
+                        <input
+                            id="task-date"
+                            name="date"
+                            type="date"
+                        >
+
+                        <label class="sr-only" for="task-priority">
+                            Priority
+                        </label>
+
+                        <select id="task-priority" name="priority">
+                            <option value="Normal">Normal</option>
+                            <option value="Important">Important</option>
+                            <option value="Urgent">Urgent</option>
+                        </select>
+
+                        <button class="button button-burgundy add-task" type="submit">
+                            Add task <span>＋</span>
+                        </button>
+                    </form>
+
+                    <div class="task-filters" role="group" aria-label="Filter tasks">
+                        <button class="filter-btn selected" data-filter="all" type="button">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-filter="active" type="button">
+                            To do
+                        </button>
+
+                        <button class="filter-btn" data-filter="completed" type="button">
+                            Completed
+                        </button>
+                    </div>
+
+                    <ul class="task-list" id="task-list" aria-live="polite">
+                        <li class="empty-state">
+                            Your list is clear. Add your first task above ✳
+                        </li>
+                    </ul>
+                </section>
+
+                <aside class="planner-aside">
+                    <div class="aside-flower">✳</div>
+
+                    <p class="eyebrow">A GENTLE REMINDER</p>
+
+                    <h3>
+                        Progress is still progress, even when it's <em>small.</em>
+                    </h3>
+
+                    <p>
+                        Break big assignments into smaller steps. Give yourself time to focus, and remember to rest.
+                    </p>
+
+                    <div class="aside-line"></div>
+
+                    <b>Little by little.</b>
+                    <span>— Your future self</span>
+                </aside>
+            </div>
+
+            <p class="planner-note">
+                Your planner uses your browser's local storage. Tasks stay on this device and are not synced to an online account.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <a class="brand footer-brand" href="index.html">
+                <span class="brand-mark">E.</span>
+                <span>
+                    eunice adegbesan
+                    <small>STUDENT PORTFOLIO</small>
+                </span>
+            </a>
+
+            <p>Designed with intention. Built while learning.</p>
+
+            <span>
+                © <span data-year></span> Eunice Adegbesan
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
+```
